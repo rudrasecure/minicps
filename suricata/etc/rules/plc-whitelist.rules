@@ -1,0 +1,2 @@
+alert tcp !$PLCS any -> $PLCS any (msg:"IP traffic observed from external network to PLC network"; classtype:targeted-activity; target:dest_ip; sid:100000; rev:1;)
+alert tcp $PLCS any -> !$PLCS any (msg:"IP traffic observed from external network to PLC network"; classtype:targeted-activity; target:src_ip; sid:100001; rev:1;)
