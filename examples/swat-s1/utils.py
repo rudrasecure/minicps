@@ -95,7 +95,8 @@ IP = {
     'plc4': '192.168.1.40',
     'plc5': '192.168.1.50',
     'plc6': '192.168.1.60',
-    'attacker': '192.168.1.77',
+    'attacker': '10.1.0.77',
+    'defender': '192.168.1.200',
 }
 
 NETMASK = '/24'
@@ -108,6 +109,7 @@ MAC = {
     'plc5': '00:1D:9C:C8:BC:2F',
     'plc6': '00:1D:9C:C7:FA:2D',
     'attacker': 'AA:AA:AA:AA:AA:AA',
+    'defender': 'DD:DD:DD:DD:DD:DD',
 }
 
 
@@ -132,6 +134,8 @@ PLC1_TAGS = (
     ('FIT101', 1, 'REAL'),
     ('MV101', 1, 'INT'),
     ('LIT101', 1, 'REAL'),
+    ('LIT101_H', 1, 'REAL'),
+    ('LIT101_L', 1, 'REAL'),
     ('P101', 1, 'INT'),
     # interlocks does NOT go to the statedb
     ('FIT201', 1, 'REAL'),

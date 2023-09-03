@@ -5,7 +5,7 @@
 LATEST_VERSION = 1.1.3
 MININET = sudo mn
 
-PYTHON = sudo python
+PYTHON = sudo -E python
 PYTHON_OPTS =
 
 # regex testMatch: (?:^|[b_.-])[Tt]est)

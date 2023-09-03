@@ -470,7 +470,7 @@ class EnipProtocol(Protocol):
             self._client_cmd +
             '--log ' + self._client_log +
             ' --print --address ' + address +
-            ' ' + tag_string
+            ' -p ' + tag_string
         )
         # print 'DEBUG enip _receive cmd shlex list: ', cmd
 
@@ -485,7 +485,7 @@ class EnipProtocol(Protocol):
             # value is stored as first tuple element
             # between a pair of square brackets
 
-            raw_string = raw_out[0]
+            raw_string = raw_out[0].decode('utf-8')
             # print("DEBUG2 " + str(raw_string))
             raw_string = str(raw_string)
             out = raw_string[(raw_string.find('[') + 1):raw_string.find(']')]

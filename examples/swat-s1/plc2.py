@@ -33,18 +33,16 @@ class SwatPLC2(PLC):
 
         print('DEBUG: swat-s1 plc2 enters main_loop.')
 
-        count = 0
-        while(count <= PLC_SAMPLES):
+        while True:
 
             fit201 = float(self.get(FIT201_2))
             print("DEBUG PLC2 - get fit201: %f" % fit201)
 
-            self.send(FIT201_2, fit201, PLC2_ADDR)
-            # fit201 = self.receive(FIT201_2, PLC2_ADDR)
-            # print("DEBUG PLC2 - receive fit201: ", fit201)
+            # self.send(FIT201_2, fit201, PLC2_ADDR)
+            fit201 = self.receive(FIT201_2, PLC2_ADDR)
+            print("DEBUG PLC2 - receive fit201: ", fit201)
 
             time.sleep(PLC_PERIOD_SEC)
-            count += 1
 
         print('DEBUG swat plc2 shutdown')
 

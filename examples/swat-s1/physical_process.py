@@ -27,6 +27,7 @@ LIT101 = ('LIT101', 1)
 LIT301 = ('LIT301', 3)
 FIT101 = ('FIT101', 1)
 FIT201 = ('FIT201', 2)
+LIT101_HH = ('LIT101_HH', 1)
 # SPHINX_SWAT_TUTORIAL TAGS)
 
 
@@ -38,7 +39,7 @@ class RawWaterTank(Tank):
         # SPHINX_SWAT_TUTORIAL STATE INIT(
         self.set(MV101, 1)
         self.set(P101, 0)
-        self.level = self.set(LIT101, 0.800)
+        self.level = self.set(LIT101, 0.400)
         # SPHINX_SWAT_TUTORIAL STATE INIT)
 
         # test underflow
@@ -52,7 +53,7 @@ class RawWaterTank(Tank):
         columns = ['Time', 'MV101', 'P101', 'LIT101', 'LIT301', 'FIT101', 'FIT201']
         df = pd.DataFrame(columns=columns)
         timestamp=0
-        while(count <= PP_SAMPLES):
+        while True:
 
             new_level = self.level
 
@@ -94,7 +95,6 @@ class RawWaterTank(Tank):
             # 988 sec starting from 0.500 m
             if new_level >= LIT_101_M['HH']:
                 print('DEBUG RawWaterTank above HH count: ', count)
-                break
 
             # 367 sec starting from 0.500 m
             elif new_level <= LIT_101_M['LL']:

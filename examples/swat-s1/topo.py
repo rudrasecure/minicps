@@ -38,3 +38,10 @@ class SwatTopo(Topo):
             ip=IP['attacker'] + NETMASK,
             mac=MAC['attacker'])
         self.addLink(attacker, switch)
+
+        defender = self.addHost(
+            'defender',
+            ip=IP['defender'] + NETMASK,
+            mac=MAC['defender']
+        )
+        self.addLink(defender, switch)

@@ -33,8 +33,7 @@ class SwatPLC3(PLC):
 
         print('DEBUG: swat-s1 plc3 enters main_loop.')
 
-        count = 0
-        while(count <= PLC_SAMPLES):
+        while True:
 
             lit301 = float(self.get(LIT301_3))
             print("DEBUG PLC3 - get lit301: %f" % lit301)
@@ -42,7 +41,6 @@ class SwatPLC3(PLC):
             self.send(LIT301_3, lit301, PLC3_ADDR)
 
             time.sleep(PLC_PERIOD_SEC)
-            count += 1
 
         print('DEBUG swat plc3 shutdown')
 
