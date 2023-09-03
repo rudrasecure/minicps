@@ -1,0 +1,3 @@
+[submodule "swat-s1-detection"]
+	path = swat-s1-detection
+	url = https://github.com/rudrasecure/swat-s1-detection.git
