@@ -101,8 +101,8 @@ class RawWaterTank(Tank):
                 print('DEBUG RawWaterTank below LL count: ', count)
                 break 
             new_data = pd.DataFrame(data = [[timestamp, self.get(MV101), self.get(P101), self.get(LIT101), self.get(LIT301), self.get(FIT101), self.get(FIT201)]], columns=columns)
-            df = pd.concat([df,new_data])
-            df.to_csv('logs/data.csv', index=False)
+            #df = pd.concat([df,new_data])
+            new_data.to_csv('logs/data.csv', index=False, mode='a', header=False)
             count += 1
             time.sleep(PP_PERIOD_SEC)
             timestamp+=PP_PERIOD_SEC
