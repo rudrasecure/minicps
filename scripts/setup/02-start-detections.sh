@@ -7,7 +7,7 @@ cd "$(git rev-parse --show-toplevel)"
 sudo ovs-vsctl -- --id=@m create mirror name=corespanmirror -- add bridge s1 mirrors @m
 sudo ovs-vsctl -- --id=@m get port s1-eth5 -- set mirror corespanmirror select_all=true output-port=@m
 
-sudo docker ps -q --filter name=suricata | grep -q . && docker stop suricata && docker rm -fv suricata &> /dev/null || true
+sudo docker ps -q --filter name=suricata | grep -q . && sudo docker stop suricata && sudo docker rm -fv suricata &> /dev/null || true
 sudo docker run -d --rm --name suricata --net=host --cap-add=net_admin --cap-add=net_raw --cap-add=sys_nice -v $PWD/logs/suricata/:/var/log/suricata -v $PWD/suricata/etc:/etc/suricata jasonish/suricata:latest -i s1-eth5
 
 tmux new-session -d -s defender
