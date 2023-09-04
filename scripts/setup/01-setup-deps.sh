@@ -14,8 +14,9 @@ sudo ln -s /usr/bin/ovs-testcontroller /usr/bin/ovs-controller
 sudo service openvswitch-testcontroller stop
 
 # Install python dependencies
-pip install -r requirements.txt
-python setup.py install
+sudo pip install -r requirements.txt
+sudo pip install -r swat-s1-detection/requirements.txt
+sudo python setup.py install
 
 # Initialize swat-s1 DB
 make swat-s1-init
