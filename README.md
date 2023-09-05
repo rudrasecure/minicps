@@ -23,6 +23,8 @@ An Autoencoder is an FNN that consist of three components, namely, the encoder, 
 
 ![image](https://github.com/rudrasecure/minicps/assets/52862591/a1ee893a-7faf-4030-ae20-234ec753316e)
 
+_Sure, the above image is of an autoencoder that uses CNNs and is for images. But, it gives a better understanding of the intuition behind Autoencoders, i.e. force the model to retain useful information and discard the rest!_
+
 1. Encoder: a module that compresses the input data into an encoded representation that is typically several orders of magnitude smaller than the input data. The encoder is composed of a set of convolutional blocks followed by pooling modules or simple linear layers that compress the input to the model into a compact section called the "bottleneck" or "code".
 
 2. Code: As you probably have already understood, the most important part of the neural network, and ironically the smallest one, is the code. The code exists to restrict the flow of information to the decoder from the encoder, thus, allowing only the most vital information to pass through. The code helps us form a knowledge representation of the input.
